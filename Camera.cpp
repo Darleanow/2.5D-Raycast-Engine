@@ -91,6 +91,8 @@ void camera::projection()
 		float xIncrement = deltaX / (float)steps;
 		float yIncrement = deltaY / (float)steps;
 
+		int mapXPrev = -1, mapYPrev = -1;
+
 		for (int j = 0; j < steps; j++)
 		{
 			x += xIncrement;
@@ -99,21 +101,30 @@ void camera::projection()
 			int mapX = x / blocSize;
 			int mapY = y / blocSize;
 
+			if (mapX == mapXPrev && mapY == mapYPrev) continue;
+
 			if (mapX >= 0 && mapY >= 0 && mapX < m_map.getWidth() && mapY < m_map.getHeight() && m_map.checkMapCase(mapX, mapY))
 			{
 				m_intersection.x = x;
 				m_intersection.y = y;
-				m_vecDistances[i] = sqrt(pow((m_position.x - x), 2) + pow((m_position.y - y), 2));
+				float dx = m_position.x - x;
+				float dy = m_position.y - y;
+				m_vecDistances[i] = sqrt(dx * dx + dy * dy);
 				m_vecRays[i][1].position = m_intersection;
+
 				break;
 			}
 			else
 			{
 				m_vecDistances[i] = m_rayLength;
 			}
+
+			mapXPrev = mapX;
+			mapYPrev = mapY;
 		}
 	}
 }
+
 
 void camera::checkKeyboardHit(sf::Time dt)
 {
