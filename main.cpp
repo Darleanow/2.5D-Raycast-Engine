@@ -9,6 +9,7 @@ int main()
 
     map _map(window);
     camera camera_(window, _map);
+    window.setMouseCursorVisible(false);
 
     while (window.isOpen())
     {

@@ -149,23 +149,21 @@ void camera::checkKeyboardHit(sf::Time dt)
 		m_position -= right * m_speedMove * dt.asSeconds();
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	{
-		m_angle -= m_speedAngle * dt.asSeconds();
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-		m_angle += m_speedAngle * dt.asSeconds();
-	}
+	// Get the mouse position relative to the window
+	sf::Vector2i mousePos = sf::Mouse::getPosition(m_renderWindow);
+	// Calculate the difference between the mouse's position and the center of the window
+	float diffX = mousePos.x - m_renderWindow.getSize().x / 2.f;
+	float diffY = m_renderWindow.getSize().y / 2.f - mousePos.y;
 
-	if (m_angle > 360)
-		m_angle = 0;
-	else if (m_angle < 0)
-		m_angle = 360;
+	m_angle += -diffX * m_speedAngle * dt.asSeconds();
+
+	// Warp the mouse to the center of the window
+	sf::Mouse::setPosition(sf::Vector2i(m_renderWindow.getSize().x / 2, m_renderWindow.getSize().y / 2), m_renderWindow);
 
 	m_camera.setPosition(m_position);
 	m_camera.setRotation(m_angle);
 }
+
 
 bool camera::intersect(unsigned int it)
 {
@@ -191,7 +189,7 @@ bool camera::intersect(unsigned int it)
 
 inline float camera::toRadian(float deg)
 {
-	return (3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679 / 180) * deg;
+	return ( PI / 180) * deg;
 }
 
 inline float camera::dCos(float deg)
