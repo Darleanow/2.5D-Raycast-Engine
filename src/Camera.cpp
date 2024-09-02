@@ -39,10 +39,7 @@ camera::camera(sf::RenderWindow& renderWindow, map& Map)
 }
 
 void camera::draw3D() {
-  float sliceWidth =
-      (float)SCREENWIDTH /
-      m_vecDistances
-          .size();  // Ensure sliceWidth is float for accurate calculations
+  float sliceWidth = (float)SCREENWIDTH / m_vecDistances.size();
   float wallHeightFactor = 100.0f;
 
   for (unsigned int i = 0; i < m_vecDistances.size(); i++) {
@@ -55,15 +52,23 @@ void camera::draw3D() {
     slice.setPosition(i * sliceWidth, (SCREENHEIGHT / 2.0f) - halfSliceHeight);
 
     float maxDist = m_rayLength;
-    float minBlue = 50.0f;
-    float maxBlue = 255.0f;
-    float blue =
-        maxBlue - ((correctedDistance / maxDist) * (maxBlue - minBlue));
-    slice.setFillColor(sf::Color(0, 0, std::max(minBlue, blue)));
+    float minColor = 50.0f;
+    float maxColor = 255.0f;
+
+    float colorIntensity =
+        maxColor - ((correctedDistance / maxDist) * (maxColor - minColor));
+    float red =
+        std::max(minColor / 2, colorIntensity * 0.8f);  // Purple tone red
+    float green =
+        std::max(minColor / 2, colorIntensity * 0.2f);  // Less green for purple
+    float blue = colorIntensity;                        // Full blue intensity
+
+    slice.setFillColor(sf::Color(red, green, blue));
 
     m_renderWindow.draw(slice);
   }
 }
+
 
 void camera::update() {
   sf::Time dt = m_clock.restart();
@@ -144,8 +149,7 @@ void camera::checkKeyboardHit(sf::Time dt) {
 
   sf::Vector2i mousePos = sf::Mouse::getPosition(m_renderWindow);
   float diffX = mousePos.x - m_renderWindow.getSize().x / 2.f;
-
-  m_angle += -diffX * m_speedAngle *
+  m_angle += -diffX * (m_speedAngle * 0.5f) *
              dt.asSeconds();
 
   sf::Mouse::setPosition(sf::Vector2i(m_renderWindow.getSize().x / 2,
