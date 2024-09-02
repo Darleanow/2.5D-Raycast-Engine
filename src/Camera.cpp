@@ -1,6 +1,6 @@
 #include "Camera.hpp"
 
-#include <cmath>  // Include cmath for more precise PI
+#include <cmath>
 #include <iostream>
 
 camera::camera(sf::RenderWindow& renderWindow, map& Map)
@@ -18,7 +18,7 @@ camera::camera(sf::RenderWindow& renderWindow, map& Map)
   m_fov = 60;
   m_rayLength = 800;
 
-  m_angle = 0;  // Initialize the camera angle
+  m_angle = 0;
 
   for (unsigned int i = 0; i < SCREENWIDTH; i++) {
     sf::VertexArray ray(sf::Lines, 2);
@@ -123,32 +123,31 @@ void camera::projection() {
 }
 
 void camera::checkKeyboardHit(sf::Time dt) {
+  // Calculate the forward direction vector based on the current angle
   sf::Vector2f direction(dCos(m_angle), dSin(m_angle));
-  sf::Vector2f right(-direction.y, direction.x);
+
+  sf::Vector2f right(direction.y,
+                     -direction.x);  // Swapped to correct strafing direction
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
-    m_position += direction * m_speedMove * dt.asSeconds();
+    m_position += direction * m_speedMove * dt.asSeconds();  // Move forward
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-    m_position -= direction * m_speedMove * dt.asSeconds();
+    m_position -= direction * m_speedMove * dt.asSeconds();  // Move backward
   }
 
+  // Strafing left and right
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-    m_position -=
-        right * m_speedMove * dt.asSeconds();  // Fix movement direction
+    m_position -= right * m_speedMove * dt.asSeconds();  // Strafe left
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-    m_position +=
-        right * m_speedMove * dt.asSeconds();  // Fix movement direction
+    m_position += right * m_speedMove * dt.asSeconds();  // Strafe right
   }
 
-  // Get the mouse position relative to the window
   sf::Vector2i mousePos = sf::Mouse::getPosition(m_renderWindow);
-  // Calculate the difference between the mouse's position and the center of the
-  // window
   float diffX = mousePos.x - m_renderWindow.getSize().x / 2.f;
 
-  m_angle += -diffX * m_speedAngle * dt.asSeconds();
+  m_angle += -diffX * m_speedAngle *
+             dt.asSeconds();
 
-  // Warp the mouse to the center of the window
   sf::Mouse::setPosition(sf::Vector2i(m_renderWindow.getSize().x / 2,
                                       m_renderWindow.getSize().y / 2),
                          m_renderWindow);
@@ -156,6 +155,7 @@ void camera::checkKeyboardHit(sf::Time dt) {
   m_camera.setPosition(m_position);
   m_camera.setRotation(m_angle);
 }
+
 
 bool camera::intersect(unsigned int it) {
   float fAngle = m_angle + m_fov / 2.0f - (it * m_fov) / (float)SCREENWIDTH;
@@ -178,7 +178,7 @@ bool camera::intersect(unsigned int it) {
 
 inline float camera::toRadian(float deg) {
   return (M_PI / 180.0f) *
-         deg;  // Use the more accurate M_PI constant from cmath
+         deg;
 }
 
 inline float camera::dCos(float deg) { return cos(toRadian(deg)); }
