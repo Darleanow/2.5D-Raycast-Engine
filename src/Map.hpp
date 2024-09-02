@@ -12,7 +12,7 @@ public:
 
 	bool checkMapCase(unsigned int dx, unsigned int dy);
 
-	unsigned int getWidth();
-	unsigned int getHeight();
+	size_t getWidth();
+	size_t getHeight();
 };
 

@@ -1,11 +1,11 @@
 #include <SFML/Graphics.hpp>
-#include "Camera.hpp"
-#include "Map.hpp"
+#include "src/Camera.hpp"
+#include "src/Map.hpp"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(SCREENWIDTH, SCREENHEIGHT), "RayCast");
-    window.setFramerateLimit(120);
+    window.setFramerateLimit(144);
 
     map _map(window);
     camera camera_(window, _map);

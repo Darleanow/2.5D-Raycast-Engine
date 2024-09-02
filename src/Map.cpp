@@ -44,12 +44,12 @@ bool map::checkMapCase(unsigned int dx, unsigned int dy)
 	return m_vecMap[dy][dx] != 0;
 }
 
-unsigned int map::getHeight()
+size_t map::getHeight()
 {
 	return m_vecMap.size();
 }
 
-unsigned int map::getWidth()
+size_t map::getWidth()
 {
 	return m_vecMap[0].size();
 }
