@@ -1,2 +1,16 @@
 .vs
 out
+
+# Ignore build output
+/build/
+/docs/xml/
+/docs/html/
+/docs/latex/
+
+# Ignore Sphinx cache
+/source/_build/
+/source/_static/
+/source/_templates/
+
+# Ignore Doxygen files if not needed in the repo
+Doxyfile
