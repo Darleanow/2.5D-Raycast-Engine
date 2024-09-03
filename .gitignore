@@ -1,2 +1,10 @@
 .vs
 out
+
+# Ignore build artifacts
+build/
+out/
+source/
+
+# Include docs in the gh-pages branch
+!docs/
