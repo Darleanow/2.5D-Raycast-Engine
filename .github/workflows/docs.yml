@@ -34,6 +34,7 @@ jobs:
     - name: Move files to root before deploy
       run: |
         mv ./build/html/* ./build/
+        mv ./build/index.html ./ # Move index.html to the root
         rm -rf ./build/html
 
     - name: Deploy to GitHub Pages
