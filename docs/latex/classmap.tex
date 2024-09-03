@@ -1,0 +1,279 @@
+\doxysection{map Class Reference}
+\hypertarget{classmap}{}\label{classmap}\index{map@{map}}
+
+
+Represents the game map, including its dimensions and obstacles.  
+
+
+
+
+{\ttfamily \#include $<$Map.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmap_a64a067e38ec78bc294ceae4d74951870}{map}} (sf\+::\+Render\+Window \&\mbox{\hyperlink{classmap_af6ddd769f5d06f46b32cdbb40783b783}{m\+\_\+render\+Window}})
+\begin{DoxyCompactList}\small\item\em Constructs a map object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmap_ad78e8aa79ddc5faa496c37600151bd17}{check\+Map\+Case}} (unsigned int dx, unsigned int dy)
+\begin{DoxyCompactList}\small\item\em Checks if a specific map cell is a wall or obstacle. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classmap_ace7bafa28bae3295dab9e917bcc92665}{get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the width of the map. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classmap_a20b217778b82c7c2d70c852bd41e9b43}{get\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmap_aa0562fd4f241b9a146153dcca585e243}{add\+Obstacles}} (int count)
+\begin{DoxyCompactList}\small\item\em Adds random obstacles to the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \& \mbox{\hyperlink{classmap_af6ddd769f5d06f46b32cdbb40783b783}{m\+\_\+render\+Window}}
+\begin{DoxyCompactList}\small\item\em Reference to the SFML render window. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ unsigned int $>$ $>$ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\+\_\+vec\+Map}}
+\begin{DoxyCompactList}\small\item\em 2D vector representing the map grid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmap_a34b43c4ecce8de3a5228b7f4e6d66740}{width}}
+\begin{DoxyCompactList}\small\item\em Width of the map in blocks. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41}{height}}
+\begin{DoxyCompactList}\small\item\em Height of the map in blocks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the game map, including its dimensions and obstacles. 
+
+The map class handles the creation of a game environment, including generating obstacles and providing methods to interact with the map data. 
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmap_a64a067e38ec78bc294ceae4d74951870}\index{map@{map}!map@{map}}
+\index{map@{map}!map@{map}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily \label{classmap_a64a067e38ec78bc294ceae4d74951870} 
+map\+::map (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+render\+Window}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a map object. 
+
+Initializes the map, sets its dimensions, and populates it with obstacles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+render\+Window} & Reference to the SFML render window. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmap_af6ddd769f5d06f46b32cdbb40783b783}{m\_renderWindow}}(\mbox{\hyperlink{classmap_af6ddd769f5d06f46b32cdbb40783b783}{m\_renderWindow}})\ \{}
+\DoxyCodeLine{00009\ \ \ std::srand(std::time(\textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \mbox{\hyperlink{classmap_a34b43c4ecce8de3a5228b7f4e6d66740}{width}}\ =\ 101;}
+\DoxyCodeLine{00012\ \ \ \mbox{\hyperlink{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41}{height}}\ =\ 61;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}.resize(\mbox{\hyperlink{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41}{height}},\ std::vector<unsigned\ int>(\mbox{\hyperlink{classmap_a34b43c4ecce8de3a5228b7f4e6d66740}{width}},\ 0));}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ \mbox{\hyperlink{classmap_a34b43c4ecce8de3a5228b7f4e6d66740}{width}};\ ++x)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}[0][x]\ =\ 1;}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}[\mbox{\hyperlink{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41}{height}}\ -\/\ 1][x]\ =\ 1;}
+\DoxyCodeLine{00019\ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ \mbox{\hyperlink{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41}{height}};\ ++y)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}[y][0]\ =\ 1;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}[y][\mbox{\hyperlink{classmap_a34b43c4ecce8de3a5228b7f4e6d66740}{width}}\ -\/\ 1]\ =\ 1;}
+\DoxyCodeLine{00023\ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classmap_aa0562fd4f241b9a146153dcca585e243}{addObstacles}}(300);}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmap_aa0562fd4f241b9a146153dcca585e243}\index{map@{map}!addObstacles@{addObstacles}}
+\index{addObstacles@{addObstacles}!map@{map}}
+\doxysubsubsection{\texorpdfstring{addObstacles()}{addObstacles()}}
+{\footnotesize\ttfamily \label{classmap_aa0562fd4f241b9a146153dcca585e243} 
+void map\+::add\+Obstacles (\begin{DoxyParamCaption}\item[{int}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Adds random obstacles to the map. 
+
+This function randomly places a specified number of obstacles within the map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & The number of obstacles to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ std::default\_random\_engine\ rng(std::random\_device\{\}());}
+\DoxyCodeLine{00030\ \ \ std::uniform\_int\_distribution<int>\ distX(1,\ \mbox{\hyperlink{classmap_a34b43c4ecce8de3a5228b7f4e6d66740}{width}}\ -\/\ 2);}
+\DoxyCodeLine{00031\ \ \ std::uniform\_int\_distribution<int>\ distY(1,\ \mbox{\hyperlink{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41}{height}}\ -\/\ 2);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ count;\ i++)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ distX(rng);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ y\ =\ distY(rng);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}[y][x]\ ==\ 0)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}[y][x]\ =\ 1;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \}}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmap_ad78e8aa79ddc5faa496c37600151bd17}\index{map@{map}!checkMapCase@{checkMapCase}}
+\index{checkMapCase@{checkMapCase}!map@{map}}
+\doxysubsubsection{\texorpdfstring{checkMapCase()}{checkMapCase()}}
+{\footnotesize\ttfamily \label{classmap_ad78e8aa79ddc5faa496c37600151bd17} 
+bool map\+::check\+Map\+Case (\begin{DoxyParamCaption}\item[{unsigned int}]{dx}{, }\item[{unsigned int}]{dy}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a specific map cell is a wall or obstacle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & The x-\/coordinate of the cell. \\
+\hline
+{\em dy} & The y-\/coordinate of the cell. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the cell is a wall or obstacle, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordflow}{if}\ (dx\ >=\ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}[0].size()\ ||\ dy\ >=\ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}.size())\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00045\ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}[dy][dx]\ !=\ 0;}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmap_a20b217778b82c7c2d70c852bd41e9b43}\index{map@{map}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!map@{map}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily \label{classmap_a20b217778b82c7c2d70c852bd41e9b43} 
+size\+\_\+t map\+::get\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the height of the map. 
+
+\begin{DoxyReturn}{Returns}
+The height of the map in blocks. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}.size();\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmap_ace7bafa28bae3295dab9e917bcc92665}\index{map@{map}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!map@{map}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily \label{classmap_ace7bafa28bae3295dab9e917bcc92665} 
+size\+\_\+t map\+::get\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the width of the map. 
+
+\begin{DoxyReturn}{Returns}
+The width of the map in blocks. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}}[0].size();\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41}\index{map@{map}!height@{height}}
+\index{height@{height}!map@{map}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41} 
+int map\+::height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Height of the map in blocks. 
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+\Hypertarget{classmap_af6ddd769f5d06f46b32cdbb40783b783}\index{map@{map}!m\_renderWindow@{m\_renderWindow}}
+\index{m\_renderWindow@{m\_renderWindow}!map@{map}}
+\doxysubsubsection{\texorpdfstring{m\_renderWindow}{m\_renderWindow}}
+{\footnotesize\ttfamily \label{classmap_af6ddd769f5d06f46b32cdbb40783b783} 
+sf\+::\+Render\+Window\& map\+::m\+\_\+render\+Window\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reference to the SFML render window. 
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+\Hypertarget{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}\index{map@{map}!m\_vecMap@{m\_vecMap}}
+\index{m\_vecMap@{m\_vecMap}!map@{map}}
+\doxysubsubsection{\texorpdfstring{m\_vecMap}{m\_vecMap}}
+{\footnotesize\ttfamily \label{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93} 
+std\+::vector$<$std\+::vector$<$unsigned int$>$ $>$ map\+::m\+\_\+vec\+Map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+2D vector representing the map grid. 
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+\Hypertarget{classmap_a34b43c4ecce8de3a5228b7f4e6d66740}\index{map@{map}!width@{width}}
+\index{width@{width}!map@{map}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{classmap_a34b43c4ecce8de3a5228b7f4e6d66740} 
+int map\+::width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Width of the map in blocks. 
+
+
+
+Definition at line \mbox{\hyperlink{_map_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{_map_8hpp_source}{Map.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Map.\+hpp\item 
+src/Map.\+cpp\end{DoxyCompactItemize}

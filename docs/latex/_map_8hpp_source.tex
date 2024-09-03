@@ -1,0 +1,32 @@
+\doxysection{Map.\+hpp}
+\hypertarget{_map_8hpp_source}{}\label{_map_8hpp_source}\index{src/Map.hpp@{src/Map.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}constants.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00014}\mbox{\hyperlink{classmap}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmap}{map}}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00015}00015\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00016}\mbox{\hyperlink{classmap_af6ddd769f5d06f46b32cdbb40783b783}{00016}}\ \ \ sf::RenderWindow\&\ \mbox{\hyperlink{classmap_af6ddd769f5d06f46b32cdbb40783b783}{m\_renderWindow}};\ \ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00017}00017\ \ \ std::vector<std::vector<unsigned\ int>>}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00018}\mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{00018}}\ \ \ \ \ \ \ \mbox{\hyperlink{classmap_a474e50ad49a4b19d0d5bec2fbdc14b93}{m\_vecMap}};\ \ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00020}\mbox{\hyperlink{classmap_a34b43c4ecce8de3a5228b7f4e6d66740}{00020}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmap_a34b43c4ecce8de3a5228b7f4e6d66740}{width}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00021}\mbox{\hyperlink{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41}{00021}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmap_a9958bc4a129d86b6e0b1b61a6ae16c41}{height}};\ \ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00031}00031\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmap_aa0562fd4f241b9a146153dcca585e243}{addObstacles}}(\textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00033}00033\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00041}00041\ \ \ \mbox{\hyperlink{classmap_a64a067e38ec78bc294ceae4d74951870}{map}}(sf::RenderWindow\&\ \mbox{\hyperlink{classmap_af6ddd769f5d06f46b32cdbb40783b783}{m\_renderWindow}});}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00050}00050\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classmap_ad78e8aa79ddc5faa496c37600151bd17}{checkMapCase}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dx,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dy);}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00057}00057\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classmap_ace7bafa28bae3295dab9e917bcc92665}{getWidth}}();}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00064}00064\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classmap_a20b217778b82c7c2d70c852bd41e9b43}{getHeight}}();}
+\DoxyCodeLine{\Hypertarget{_map_8hpp_source_l00065}00065\ \};}
+
+\end{DoxyCode}

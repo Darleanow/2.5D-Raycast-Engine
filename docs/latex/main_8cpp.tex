@@ -1,0 +1,84 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Entry point for the 2.\+5D raycasting engine.  
+
+
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include "{}src/\+Camera.\+hpp"{}}\newline
+{\ttfamily \#include "{}src/\+Map.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em The main function for the 2.\+5D raycasting engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point for the 2.\+5D raycasting engine. 
+
+This file contains the main function, which initializes the SFML window, creates the map and camera objects, and runs the main loop of the application. 
+
+Definition in file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+The main function for the 2.\+5D raycasting engine. 
+
+Initializes the game window, sets up the map and camera, and enters the main loop where events are handled, and the scene is updated and rendered.
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 upon successful execution. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \textcolor{comment}{//\ Create\ the\ SFML\ render\ window}}
+\DoxyCodeLine{00025\ \ \ sf::RenderWindow\ window(sf::VideoMode(SCREENWIDTH,\ SCREENHEIGHT),\ \textcolor{stringliteral}{"{}RayCast"{}});}
+\DoxyCodeLine{00026\ \ \ window.setFramerateLimit(144);}
+\DoxyCodeLine{00027\ \ \ window.setVerticalSyncEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//\ Create\ a\ map\ with\ a\ randomly\ generated\ maze}}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{classmap}{map}}\ \_map(window);}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{classcamera}{camera}}\ camera\_(window,\ \_map);}
+\DoxyCodeLine{00032\ \ \ window.setMouseCursorVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ Main\ loop}}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordflow}{while}\ (window.isOpen())\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ sf::Event\ event;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{while}\ (window.pollEvent(event))\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (event.type)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Event::Closed:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ window.close();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Event::KeyReleased:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event.key.code\ ==\ sf::Keyboard::Escape)\ window.close();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Update\ and\ draw\ in\ the\ same\ loop}}
+\DoxyCodeLine{00049\ \ \ \ \ camera\_.update();}
+\DoxyCodeLine{00050\ \ \ \ \ window.clear();}
+\DoxyCodeLine{00051\ \ \ \ \ camera\_.draw3D();}
+\DoxyCodeLine{00052\ \ \ \ \ window.display();}
+\DoxyCodeLine{00053\ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}

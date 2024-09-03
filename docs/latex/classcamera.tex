@@ -1,0 +1,719 @@
+\doxysection{camera Class Reference}
+\hypertarget{classcamera}{}\label{classcamera}\index{camera@{camera}}
+
+
+Represents the camera in a 2.\+5D raycasting engine.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcamera_a3d8bc3e83cdc778ca84d125fe78df2e0}{camera}} (sf\+::\+Render\+Window \&render\+Window, \mbox{\hyperlink{classmap}{map}} \&Map)
+\begin{DoxyCompactList}\small\item\em Constructs a camera object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcamera_a3ed796488a936f45bbcd5da7e532988a}{draw3D}} ()
+\begin{DoxyCompactList}\small\item\em Renders the 3D view of the scene based on the camera\textquotesingle{}s perspective. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcamera_ad7331b32ddf5cc06ca0a6c710c6202b8}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the camera\textquotesingle{}s position and orientation based on user input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcamera_a52d8e786660c6892b15aaf2e27b9ea32}{projection}} ()
+\begin{DoxyCompactList}\small\item\em Casts rays from the camera\textquotesingle{}s position to determine distances to obstacles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcamera_adfc67bdf0e557f49ad780b485cdf7fbd}{check\+Keyboard\+Hit}} (sf\+::\+Time dt)
+\begin{DoxyCompactList}\small\item\em Handles keyboard input to control the camera\textquotesingle{}s movement and rotation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcamera_a041e24d91fac167068dc08632d568d1d}{intersect}} (unsigned int it)
+\begin{DoxyCompactList}\small\item\em Determines whether a ray intersects with an obstacle in the map. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classcamera_a917423b8aea58c352444880da61ae98c}{to\+Radian}} (float deg)
+\begin{DoxyCompactList}\small\item\em Converts degrees to radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classcamera_a67459e8e14b87a38e09be38a1c2a81cb}{d\+Cos}} (float deg)
+\begin{DoxyCompactList}\small\item\em Computes the cosine of an angle in degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classcamera_a16579906fa90ac60ee13cb547e300f44}{d\+Sin}} (float deg)
+\begin{DoxyCompactList}\small\item\em Computes the sine of an angle in degrees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmap}{map}} \& \mbox{\hyperlink{classcamera_ab08734ecdc965f68e37978c9abd4fa6b}{m\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em Reference to the map object. \end{DoxyCompactList}\item 
+sf\+::\+Render\+Window \& \mbox{\hyperlink{classcamera_a8ce590b00f15978be2ca8962b44906a5}{m\+\_\+render\+Window}}
+\begin{DoxyCompactList}\small\item\em Reference to the SFML render window. \end{DoxyCompactList}\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{classcamera_a1b7c318e23591214448c37582007b720}{m\+\_\+camera}}
+\begin{DoxyCompactList}\small\item\em Representation of the camera as a circle. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em Camera\textquotesingle{}s current position in the world. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classcamera_a9b47581c719b16a39b486bf59ea89238}{m\+\_\+intersection}}
+\begin{DoxyCompactList}\small\item\em Intersection point of the ray with an obstacle. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classcamera_a0eb2a385a0b4a41dae1249bf7507bb84}{m\+\_\+vec\+Distances}}
+\begin{DoxyCompactList}\small\item\em Distances from the camera to obstacles. \end{DoxyCompactList}\item 
+sf\+::\+Clock \mbox{\hyperlink{classcamera_afd6537789e1d286a9a2306c9ecd07fdd}{m\+\_\+clock}}
+\begin{DoxyCompactList}\small\item\em Clock to manage time-\/based events. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classcamera_a8a34963e75da04104e8f1932c6956301}{m\+\_\+angle}}
+\begin{DoxyCompactList}\small\item\em Camera\textquotesingle{}s current rotation angle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classcamera_a49eff598e2a5120291be6f2517557b7f}{m\+\_\+fov}}
+\begin{DoxyCompactList}\small\item\em Camera\textquotesingle{}s field of view. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classcamera_a91d570ba05593c129d7a249a84c05610}{m\+\_\+ray\+Length}}
+\begin{DoxyCompactList}\small\item\em Maximum length of the rays cast by the camera. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classcamera_a88bbde1475bca637d3ab168be2e4937c}{m\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em Radius of the camera\textquotesingle{}s circular representation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classcamera_a7772c72c2a9b104afe444d7fa96aa30b}{m\+\_\+speed\+Move}}
+\begin{DoxyCompactList}\small\item\em Speed of camera movement. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classcamera_aef1698bab1fa18359f60c5eeff76618a}{m\+\_\+speed\+Angle}}
+\begin{DoxyCompactList}\small\item\em Speed of camera rotation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46}{m\+\_\+pitch}}
+\begin{DoxyCompactList}\small\item\em Camera\textquotesingle{}s pitch (Y-\/axis rotation). \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Vertex\+Array $>$ \mbox{\hyperlink{classcamera_a4fc22d5692dec58b1afe6623273ef15e}{m\+\_\+vec\+Rays}}
+\begin{DoxyCompactList}\small\item\em Rays cast from the camera. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classcamera_a8f8f8ab3c361b210b7e89e1400df5b72}{sin\+Table}}
+\begin{DoxyCompactList}\small\item\em Precomputed sine values for ray angles. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classcamera_ab549fe43185366dd9c392de8c55751e0}{cos\+Table}}
+\begin{DoxyCompactList}\small\item\em Precomputed cosine values for ray angles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the camera in a 2.\+5D raycasting engine. 
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcamera_a3d8bc3e83cdc778ca84d125fe78df2e0}\index{camera@{camera}!camera@{camera}}
+\index{camera@{camera}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{camera()}{camera()}}
+{\footnotesize\ttfamily \label{classcamera_a3d8bc3e83cdc778ca84d125fe78df2e0} 
+camera\+::camera (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{render\+Window}{, }\item[{\mbox{\hyperlink{classmap}{map}} \&}]{Map}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a camera object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em render\+Window} & Reference to the SFML window where the scene is rendered. \\
+\hline
+{\em Map} & Reference to the map object used by the camera. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ :\ \mbox{\hyperlink{classcamera_a8ce590b00f15978be2ca8962b44906a5}{m\_renderWindow}}(renderWindow),\ \mbox{\hyperlink{classcamera_ab08734ecdc965f68e37978c9abd4fa6b}{m\_map}}(Map)\ \{}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{classcamera_a88bbde1475bca637d3ab168be2e4937c}{m\_radius}}\ =\ 5;}
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{classcamera_a1b7c318e23591214448c37582007b720}{m\_camera}}.setRadius(\mbox{\hyperlink{classcamera_a88bbde1475bca637d3ab168be2e4937c}{m\_radius}});}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{classcamera_a1b7c318e23591214448c37582007b720}{m\_camera}}.setFillColor(sf::Color(0,\ 255,\ 0));}
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{classcamera_a1b7c318e23591214448c37582007b720}{m\_camera}}.setOrigin(sf::Vector2f(\mbox{\hyperlink{classcamera_a88bbde1475bca637d3ab168be2e4937c}{m\_radius}},\ \mbox{\hyperlink{classcamera_a88bbde1475bca637d3ab168be2e4937c}{m\_radius}}));}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classcamera_a7772c72c2a9b104afe444d7fa96aa30b}{m\_speedMove}}\ =\ 150.0f;}
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{classcamera_aef1698bab1fa18359f60c5eeff76618a}{m\_speedAngle}}\ =\ 100.0f;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}\ =\ \{128,\ 128\};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{classcamera_a49eff598e2a5120291be6f2517557b7f}{m\_fov}}\ =\ 60;}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{classcamera_a91d570ba05593c129d7a249a84c05610}{m\_rayLength}}\ =\ 800;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classcamera_a8a34963e75da04104e8f1932c6956301}{m\_angle}}\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46}{m\_pitch}}\ =\ 0;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ SCREENWIDTH;\ i++)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ sf::VertexArray\ ray(sf::Lines,\ 2);}
+\DoxyCodeLine{00038\ \ \ \ \ ray[0].color\ =\ sf::Color::Red;}
+\DoxyCodeLine{00039\ \ \ \ \ ray[1].color\ =\ sf::Color::Red;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classcamera_a4fc22d5692dec58b1afe6623273ef15e}{m\_vecRays}}.push\_back(ray);}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classcamera_a0eb2a385a0b4a41dae1249bf7507bb84}{m\_vecDistances}}.push\_back(0.0f);}
+\DoxyCodeLine{00042\ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classcamera_a8f8f8ab3c361b210b7e89e1400df5b72}{sinTable}}.resize(SCREENWIDTH);}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classcamera_ab549fe43185366dd9c392de8c55751e0}{cosTable}}.resize(SCREENWIDTH);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ SCREENWIDTH;\ i++)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ rayAngle\ =\ \mbox{\hyperlink{classcamera_a8a34963e75da04104e8f1932c6956301}{m\_angle}}\ +\ \mbox{\hyperlink{classcamera_a49eff598e2a5120291be6f2517557b7f}{m\_fov}}\ /\ 2.0f\ -\/\ (i\ *\ \mbox{\hyperlink{classcamera_a49eff598e2a5120291be6f2517557b7f}{m\_fov}})\ /\ (\textcolor{keywordtype}{float})SCREENWIDTH;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classcamera_a8f8f8ab3c361b210b7e89e1400df5b72}{sinTable}}[i]\ =\ \mbox{\hyperlink{classcamera_a16579906fa90ac60ee13cb547e300f44}{dSin}}(rayAngle);}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classcamera_ab549fe43185366dd9c392de8c55751e0}{cosTable}}[i]\ =\ \mbox{\hyperlink{classcamera_a67459e8e14b87a38e09be38a1c2a81cb}{dCos}}(rayAngle);}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcamera_adfc67bdf0e557f49ad780b485cdf7fbd}\index{camera@{camera}!checkKeyboardHit@{checkKeyboardHit}}
+\index{checkKeyboardHit@{checkKeyboardHit}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{checkKeyboardHit()}{checkKeyboardHit()}}
+{\footnotesize\ttfamily \label{classcamera_adfc67bdf0e557f49ad780b485cdf7fbd} 
+void camera\+::check\+Keyboard\+Hit (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{dt}{}\end{DoxyParamCaption})}
+
+
+
+Handles keyboard input to control the camera\textquotesingle{}s movement and rotation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time to ensure consistent movement speed regardless of frame rate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ sf::Vector2f\ direction(\mbox{\hyperlink{classcamera_a67459e8e14b87a38e09be38a1c2a81cb}{dCos}}(\mbox{\hyperlink{classcamera_a8a34963e75da04104e8f1932c6956301}{m\_angle}}),\ \mbox{\hyperlink{classcamera_a16579906fa90ac60ee13cb547e300f44}{dSin}}(\mbox{\hyperlink{classcamera_a8a34963e75da04104e8f1932c6956301}{m\_angle}}));}
+\DoxyCodeLine{00170\ \ \ sf::Vector2f\ right(direction.y,\ -\/direction.x);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \textcolor{keywordflow}{if}\ (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}\ +=\ direction\ *\ \mbox{\hyperlink{classcamera_a7772c72c2a9b104afe444d7fa96aa30b}{m\_speedMove}}\ *\ dt.asSeconds();}
+\DoxyCodeLine{00174\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (sf::Keyboard::isKeyPressed(sf::Keyboard::S))\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}\ -\/=\ direction\ *\ \mbox{\hyperlink{classcamera_a7772c72c2a9b104afe444d7fa96aa30b}{m\_speedMove}}\ *\ dt.asSeconds();}
+\DoxyCodeLine{00176\ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \textcolor{keywordflow}{if}\ (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}\ -\/=\ right\ *\ \mbox{\hyperlink{classcamera_a7772c72c2a9b104afe444d7fa96aa30b}{m\_speedMove}}\ *\ dt.asSeconds();}
+\DoxyCodeLine{00180\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (sf::Keyboard::isKeyPressed(sf::Keyboard::D))\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}\ +=\ right\ *\ \mbox{\hyperlink{classcamera_a7772c72c2a9b104afe444d7fa96aa30b}{m\_speedMove}}\ *\ dt.asSeconds();}
+\DoxyCodeLine{00182\ \ \ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ sf::Vector2i\ mousePos\ =\ sf::Mouse::getPosition(\mbox{\hyperlink{classcamera_a8ce590b00f15978be2ca8962b44906a5}{m\_renderWindow}});}
+\DoxyCodeLine{00185\ \ \ \textcolor{keywordtype}{float}\ diffX\ =\ mousePos.x\ -\/\ \mbox{\hyperlink{classcamera_a8ce590b00f15978be2ca8962b44906a5}{m\_renderWindow}}.getSize().x\ /\ 2.f;}
+\DoxyCodeLine{00186\ \ \ \textcolor{keywordtype}{float}\ diffY\ =\ mousePos.y\ -\/\ \mbox{\hyperlink{classcamera_a8ce590b00f15978be2ca8962b44906a5}{m\_renderWindow}}.getSize().y\ /\ 2.f;}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \mbox{\hyperlink{classcamera_a8a34963e75da04104e8f1932c6956301}{m\_angle}}\ +=\ -\/diffX\ *\ (\mbox{\hyperlink{classcamera_aef1698bab1fa18359f60c5eeff76618a}{m\_speedAngle}}\ *\ 0.5f)\ *\ dt.asSeconds();}
+\DoxyCodeLine{00189\ \ \ \mbox{\hyperlink{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46}{m\_pitch}}\ -\/=\ diffY\ *\ (\mbox{\hyperlink{classcamera_aef1698bab1fa18359f60c5eeff76618a}{m\_speedAngle}}\ *\ 0.5f)\ *\ dt.asSeconds();}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \textcolor{comment}{//\ Clamp\ the\ pitch\ to\ avoid\ flipping}}
+\DoxyCodeLine{00192\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46}{m\_pitch}}\ >\ 89.0f)\ \mbox{\hyperlink{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46}{m\_pitch}}\ =\ 89.0f;}
+\DoxyCodeLine{00193\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46}{m\_pitch}}\ <\ -\/89.0f)\ \mbox{\hyperlink{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46}{m\_pitch}}\ =\ -\/89.0f;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ sf::Mouse::setPosition(sf::Vector2i(\mbox{\hyperlink{classcamera_a8ce590b00f15978be2ca8962b44906a5}{m\_renderWindow}}.getSize().x\ /\ 2,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a8ce590b00f15978be2ca8962b44906a5}{m\_renderWindow}}.getSize().y\ /\ 2),}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a8ce590b00f15978be2ca8962b44906a5}{m\_renderWindow}});}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \mbox{\hyperlink{classcamera_a1b7c318e23591214448c37582007b720}{m\_camera}}.setPosition(\mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}});}
+\DoxyCodeLine{00200\ \ \ \mbox{\hyperlink{classcamera_a1b7c318e23591214448c37582007b720}{m\_camera}}.setRotation(\mbox{\hyperlink{classcamera_a8a34963e75da04104e8f1932c6956301}{m\_angle}});}
+\DoxyCodeLine{00201\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcamera_a67459e8e14b87a38e09be38a1c2a81cb}\index{camera@{camera}!dCos@{dCos}}
+\index{dCos@{dCos}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{dCos()}{dCos()}}
+{\footnotesize\ttfamily \label{classcamera_a67459e8e14b87a38e09be38a1c2a81cb} 
+float camera\+::d\+Cos (\begin{DoxyParamCaption}\item[{float}]{deg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the cosine of an angle in degrees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deg} & Angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cosine of the angle. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00242}{242}} of file \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00242\ \{\ \textcolor{keywordflow}{return}\ cos(\mbox{\hyperlink{classcamera_a917423b8aea58c352444880da61ae98c}{toRadian}}(deg));\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcamera_a3ed796488a936f45bbcd5da7e532988a}\index{camera@{camera}!draw3D@{draw3D}}
+\index{draw3D@{draw3D}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{draw3D()}{draw3D()}}
+{\footnotesize\ttfamily \label{classcamera_a3ed796488a936f45bbcd5da7e532988a} 
+void camera\+::draw3D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Renders the 3D view of the scene based on the camera\textquotesingle{}s perspective. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{float}\ sliceWidth\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(SCREENWIDTH)\ /\ \mbox{\hyperlink{classcamera_a0eb2a385a0b4a41dae1249bf7507bb84}{m\_vecDistances}}.size();}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{float}\ wallHeightFactor\ =\ 100.0f;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classcamera_a0eb2a385a0b4a41dae1249bf7507bb84}{m\_vecDistances}}.size();\ i++)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{float}\ correctedDistance\ =\ \mbox{\hyperlink{classcamera_a0eb2a385a0b4a41dae1249bf7507bb84}{m\_vecDistances}}[i]\ *\ \mbox{\hyperlink{classcamera_ab549fe43185366dd9c392de8c55751e0}{cosTable}}[i];}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{float}\ sliceHeight\ =\ (wallHeightFactor\ /\ correctedDistance)\ *\ SCREENHEIGHT;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{float}\ halfSliceHeight\ =\ sliceHeight\ /\ 2.0f;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Apply\ pitch\ offset\ to\ simulate\ looking\ up/down}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{float}\ pitchOffset\ =\ \mbox{\hyperlink{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46}{m\_pitch}}\ *\ (SCREENHEIGHT\ /\ 2.0f)\ /\ 89.0f;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ sf::RectangleShape\ slice(sf::Vector2f(sliceWidth,\ sliceHeight));}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{float}\ yPosition\ =\ (SCREENHEIGHT\ /\ 2.0f)\ -\/\ halfSliceHeight\ +\ pitchOffset;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ Ensure\ yPosition\ doesn't\ push\ the\ slice\ completely\ out\ of\ view}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (yPosition\ >\ SCREENHEIGHT)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ yPosition\ =\ SCREENHEIGHT\ -\/\ sliceHeight;}
+\DoxyCodeLine{00075\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (yPosition\ +\ sliceHeight\ <\ 0)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ yPosition\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ slice.setPosition(i\ *\ sliceWidth,\ yPosition);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{float}\ maxDist\ =\ \mbox{\hyperlink{classcamera_a91d570ba05593c129d7a249a84c05610}{m\_rayLength}};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{float}\ minColor\ =\ 50.0f;}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{float}\ maxColor\ =\ 255.0f;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{float}\ colorIntensity\ =}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ maxColor\ -\/\ ((correctedDistance\ /\ maxDist)\ *\ (maxColor\ -\/\ minColor));}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{float}\ red\ =}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::max(minColor\ /\ 2,\ colorIntensity\ *\ 0.8f);\ \ \textcolor{comment}{//\ Purple\ tone\ red}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{float}\ green\ =}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::max(minColor\ /\ 2,\ colorIntensity\ *\ 0.2f);\ \ \textcolor{comment}{//\ Less\ green\ for\ purple}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{float}\ blue\ =\ colorIntensity;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Full\ blue\ intensity}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ slice.setFillColor(sf::Color(red,\ green,\ blue));}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classcamera_a8ce590b00f15978be2ca8962b44906a5}{m\_renderWindow}}.draw(slice);}
+\DoxyCodeLine{00096\ \ \ \}}
+\DoxyCodeLine{00097\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcamera_a16579906fa90ac60ee13cb547e300f44}\index{camera@{camera}!dSin@{dSin}}
+\index{dSin@{dSin}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{dSin()}{dSin()}}
+{\footnotesize\ttfamily \label{classcamera_a16579906fa90ac60ee13cb547e300f44} 
+float camera\+::d\+Sin (\begin{DoxyParamCaption}\item[{float}]{deg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the sine of an angle in degrees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deg} & Angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sine of the angle. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00250\ \{\ \textcolor{keywordflow}{return}\ sin(\mbox{\hyperlink{classcamera_a917423b8aea58c352444880da61ae98c}{toRadian}}(deg));\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcamera_a041e24d91fac167068dc08632d568d1d}\index{camera@{camera}!intersect@{intersect}}
+\index{intersect@{intersect}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{intersect()}{intersect()}}
+{\footnotesize\ttfamily \label{classcamera_a041e24d91fac167068dc08632d568d1d} 
+bool camera\+::intersect (\begin{DoxyParamCaption}\item[{unsigned int}]{it}{}\end{DoxyParamCaption})}
+
+
+
+Determines whether a ray intersects with an obstacle in the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & The index of the ray. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the ray intersects with an obstacle, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00209}{209}} of file \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \textcolor{keywordtype}{float}\ fAngle\ =}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a8a34963e75da04104e8f1932c6956301}{m\_angle}}\ +\ \mbox{\hyperlink{classcamera_a49eff598e2a5120291be6f2517557b7f}{m\_fov}}\ /\ 2.0f\ -\/\ (it\ *\ \mbox{\hyperlink{classcamera_a49eff598e2a5120291be6f2517557b7f}{m\_fov}})\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(SCREENWIDTH);}
+\DoxyCodeLine{00212\ \ \ sf::Vector2f\ direction\ =\ \{\mbox{\hyperlink{classcamera_a67459e8e14b87a38e09be38a1c2a81cb}{dCos}}(fAngle),\ \mbox{\hyperlink{classcamera_a16579906fa90ac60ee13cb547e300f44}{dSin}}(fAngle)\};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ length\ =\ 0;\ length\ <\ \mbox{\hyperlink{classcamera_a91d570ba05593c129d7a249a84c05610}{m\_rayLength}};\ length++)\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{int}\ dx\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}.x\ +\ length\ *\ direction.x);}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{int}\ dy\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}.y\ +\ length\ *\ direction.y);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{if}\ (dx\ /\ blocSize\ <\ \mbox{\hyperlink{classcamera_ab08734ecdc965f68e37978c9abd4fa6b}{m\_map}}.\mbox{\hyperlink{classmap_ace7bafa28bae3295dab9e917bcc92665}{getWidth}}()\ \&\&\ dy\ /\ blocSize\ <\ \mbox{\hyperlink{classcamera_ab08734ecdc965f68e37978c9abd4fa6b}{m\_map}}.\mbox{\hyperlink{classmap_a20b217778b82c7c2d70c852bd41e9b43}{getHeight}}()\ \&\&}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_ab08734ecdc965f68e37978c9abd4fa6b}{m\_map}}.\mbox{\hyperlink{classmap_ad78e8aa79ddc5faa496c37600151bd17}{checkMapCase}}(dx\ /\ blocSize,\ dy\ /\ blocSize))\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a9b47581c719b16a39b486bf59ea89238}{m\_intersection}}.x\ =\ dx;}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a9b47581c719b16a39b486bf59ea89238}{m\_intersection}}.y\ =\ dy;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00226\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcamera_a52d8e786660c6892b15aaf2e27b9ea32}\index{camera@{camera}!projection@{projection}}
+\index{projection@{projection}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{projection()}{projection()}}
+{\footnotesize\ttfamily \label{classcamera_a52d8e786660c6892b15aaf2e27b9ea32} 
+void camera\+::projection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Casts rays from the camera\textquotesingle{}s position to determine distances to obstacles. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classcamera_a4fc22d5692dec58b1afe6623273ef15e}{m\_vecRays}}.size();\ i++)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classcamera_a4fc22d5692dec58b1afe6623273ef15e}{m\_vecRays}}[i][0].position\ =\ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{float}\ fAngle\ =}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a8a34963e75da04104e8f1932c6956301}{m\_angle}}\ +\ \mbox{\hyperlink{classcamera_a49eff598e2a5120291be6f2517557b7f}{m\_fov}}\ /\ 2.0f\ -\/\ (i\ *\ \mbox{\hyperlink{classcamera_a49eff598e2a5120291be6f2517557b7f}{m\_fov}})\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(SCREENWIDTH);}
+\DoxyCodeLine{00118\ \ \ \ \ sf::Vector2f\ direction\ =\ \{\mbox{\hyperlink{classcamera_a67459e8e14b87a38e09be38a1c2a81cb}{dCos}}(fAngle),\ \mbox{\hyperlink{classcamera_a16579906fa90ac60ee13cb547e300f44}{dSin}}(fAngle)\};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}.x;}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}.y;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{float}\ deltaX\ =\ direction.x\ *\ \mbox{\hyperlink{classcamera_a91d570ba05593c129d7a249a84c05610}{m\_rayLength}};}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{float}\ deltaY\ =\ direction.y\ *\ \mbox{\hyperlink{classcamera_a91d570ba05593c129d7a249a84c05610}{m\_rayLength}};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ steps\ =\ std::max(abs(deltaX),\ abs(deltaY));}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{float}\ xIncrement\ =\ deltaX\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(steps);}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{float}\ yIncrement\ =\ deltaY\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(steps);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{int}\ mapXPrev\ =\ -\/1,\ mapYPrev\ =\ -\/1;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ steps;\ j++)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ x\ +=\ xIncrement;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ y\ +=\ yIncrement;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mapX\ =\ x\ /\ blocSize;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mapY\ =\ y\ /\ blocSize;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mapX\ ==\ mapXPrev\ \&\&\ mapY\ ==\ mapYPrev)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mapX\ >=\ 0\ \&\&\ mapY\ >=\ 0\ \&\&\ mapX\ <\ \mbox{\hyperlink{classcamera_ab08734ecdc965f68e37978c9abd4fa6b}{m\_map}}.\mbox{\hyperlink{classmap_ace7bafa28bae3295dab9e917bcc92665}{getWidth}}()\ \&\&}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ mapY\ <\ \mbox{\hyperlink{classcamera_ab08734ecdc965f68e37978c9abd4fa6b}{m\_map}}.\mbox{\hyperlink{classmap_a20b217778b82c7c2d70c852bd41e9b43}{getHeight}}()\ \&\&\ \mbox{\hyperlink{classcamera_ab08734ecdc965f68e37978c9abd4fa6b}{m\_map}}.\mbox{\hyperlink{classmap_ad78e8aa79ddc5faa496c37600151bd17}{checkMapCase}}(mapX,\ mapY))\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a9b47581c719b16a39b486bf59ea89238}{m\_intersection}}.x\ =\ x;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a9b47581c719b16a39b486bf59ea89238}{m\_intersection}}.y\ =\ y;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}.x\ -\/\ x;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dy\ =\ \mbox{\hyperlink{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}{m\_position}}.y\ -\/\ y;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a0eb2a385a0b4a41dae1249bf7507bb84}{m\_vecDistances}}[i]\ =\ sqrt(dx\ *\ dx\ +\ dy\ *\ dy);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a4fc22d5692dec58b1afe6623273ef15e}{m\_vecRays}}[i][1].position\ =\ \mbox{\hyperlink{classcamera_a9b47581c719b16a39b486bf59ea89238}{m\_intersection}};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcamera_a0eb2a385a0b4a41dae1249bf7507bb84}{m\_vecDistances}}[i]\ =\ \mbox{\hyperlink{classcamera_a91d570ba05593c129d7a249a84c05610}{m\_rayLength}};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ mapXPrev\ =\ mapX;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ mapYPrev\ =\ mapY;}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \}}
+\DoxyCodeLine{00160\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcamera_a917423b8aea58c352444880da61ae98c}\index{camera@{camera}!toRadian@{toRadian}}
+\index{toRadian@{toRadian}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{toRadian()}{toRadian()}}
+{\footnotesize\ttfamily \label{classcamera_a917423b8aea58c352444880da61ae98c} 
+float camera\+::to\+Radian (\begin{DoxyParamCaption}\item[{float}]{deg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts degrees to radians. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deg} & Degrees to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted value in radians. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00234}{234}} of file \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00234\ \{\ \textcolor{keywordflow}{return}\ (M\_PI\ /\ 180.0f)\ *\ deg;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcamera_ad7331b32ddf5cc06ca0a6c710c6202b8}\index{camera@{camera}!update@{update}}
+\index{update@{update}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classcamera_ad7331b32ddf5cc06ca0a6c710c6202b8} 
+void camera\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the camera\textquotesingle{}s position and orientation based on user input. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00102}{102}} of file \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ sf::Time\ dt\ =\ \mbox{\hyperlink{classcamera_afd6537789e1d286a9a2306c9ecd07fdd}{m\_clock}}.restart();}
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{classcamera_adfc67bdf0e557f49ad780b485cdf7fbd}{checkKeyboardHit}}(dt);}
+\DoxyCodeLine{00105\ \ \ \mbox{\hyperlink{classcamera_a52d8e786660c6892b15aaf2e27b9ea32}{projection}}();}
+\DoxyCodeLine{00106\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcamera_ab549fe43185366dd9c392de8c55751e0}\index{camera@{camera}!cosTable@{cosTable}}
+\index{cosTable@{cosTable}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{cosTable}{cosTable}}
+{\footnotesize\ttfamily \label{classcamera_ab549fe43185366dd9c392de8c55751e0} 
+std\+::vector$<$float$>$ camera\+::cos\+Table\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Precomputed cosine values for ray angles. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a8a34963e75da04104e8f1932c6956301}\index{camera@{camera}!m\_angle@{m\_angle}}
+\index{m\_angle@{m\_angle}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_angle}{m\_angle}}
+{\footnotesize\ttfamily \label{classcamera_a8a34963e75da04104e8f1932c6956301} 
+float camera\+::m\+\_\+angle\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Camera\textquotesingle{}s current rotation angle. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a1b7c318e23591214448c37582007b720}\index{camera@{camera}!m\_camera@{m\_camera}}
+\index{m\_camera@{m\_camera}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_camera}{m\_camera}}
+{\footnotesize\ttfamily \label{classcamera_a1b7c318e23591214448c37582007b720} 
+sf\+::\+Circle\+Shape camera\+::m\+\_\+camera\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Representation of the camera as a circle. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_afd6537789e1d286a9a2306c9ecd07fdd}\index{camera@{camera}!m\_clock@{m\_clock}}
+\index{m\_clock@{m\_clock}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_clock}{m\_clock}}
+{\footnotesize\ttfamily \label{classcamera_afd6537789e1d286a9a2306c9ecd07fdd} 
+sf\+::\+Clock camera\+::m\+\_\+clock\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Clock to manage time-\/based events. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a49eff598e2a5120291be6f2517557b7f}\index{camera@{camera}!m\_fov@{m\_fov}}
+\index{m\_fov@{m\_fov}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_fov}{m\_fov}}
+{\footnotesize\ttfamily \label{classcamera_a49eff598e2a5120291be6f2517557b7f} 
+float camera\+::m\+\_\+fov\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Camera\textquotesingle{}s field of view. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a9b47581c719b16a39b486bf59ea89238}\index{camera@{camera}!m\_intersection@{m\_intersection}}
+\index{m\_intersection@{m\_intersection}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_intersection}{m\_intersection}}
+{\footnotesize\ttfamily \label{classcamera_a9b47581c719b16a39b486bf59ea89238} 
+sf\+::\+Vector2f camera\+::m\+\_\+intersection\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Intersection point of the ray with an obstacle. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_ab08734ecdc965f68e37978c9abd4fa6b}\index{camera@{camera}!m\_map@{m\_map}}
+\index{m\_map@{m\_map}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_map}{m\_map}}
+{\footnotesize\ttfamily \label{classcamera_ab08734ecdc965f68e37978c9abd4fa6b} 
+\mbox{\hyperlink{classmap}{map}}\& camera\+::m\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reference to the map object. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46}\index{camera@{camera}!m\_pitch@{m\_pitch}}
+\index{m\_pitch@{m\_pitch}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_pitch}{m\_pitch}}
+{\footnotesize\ttfamily \label{classcamera_ad20d11e2cb7cb8d3687556405bd1bf46} 
+int camera\+::m\+\_\+pitch\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Camera\textquotesingle{}s pitch (Y-\/axis rotation). 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c}\index{camera@{camera}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily \label{classcamera_a947d9a37d16b0c95ac2db69e504a7b3c} 
+sf\+::\+Vector2f camera\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Camera\textquotesingle{}s current position in the world. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a88bbde1475bca637d3ab168be2e4937c}\index{camera@{camera}!m\_radius@{m\_radius}}
+\index{m\_radius@{m\_radius}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_radius}{m\_radius}}
+{\footnotesize\ttfamily \label{classcamera_a88bbde1475bca637d3ab168be2e4937c} 
+float camera\+::m\+\_\+radius\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Radius of the camera\textquotesingle{}s circular representation. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a91d570ba05593c129d7a249a84c05610}\index{camera@{camera}!m\_rayLength@{m\_rayLength}}
+\index{m\_rayLength@{m\_rayLength}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_rayLength}{m\_rayLength}}
+{\footnotesize\ttfamily \label{classcamera_a91d570ba05593c129d7a249a84c05610} 
+float camera\+::m\+\_\+ray\+Length\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Maximum length of the rays cast by the camera. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a8ce590b00f15978be2ca8962b44906a5}\index{camera@{camera}!m\_renderWindow@{m\_renderWindow}}
+\index{m\_renderWindow@{m\_renderWindow}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_renderWindow}{m\_renderWindow}}
+{\footnotesize\ttfamily \label{classcamera_a8ce590b00f15978be2ca8962b44906a5} 
+sf\+::\+Render\+Window\& camera\+::m\+\_\+render\+Window\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reference to the SFML render window. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_aef1698bab1fa18359f60c5eeff76618a}\index{camera@{camera}!m\_speedAngle@{m\_speedAngle}}
+\index{m\_speedAngle@{m\_speedAngle}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_speedAngle}{m\_speedAngle}}
+{\footnotesize\ttfamily \label{classcamera_aef1698bab1fa18359f60c5eeff76618a} 
+float camera\+::m\+\_\+speed\+Angle\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Speed of camera rotation. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a7772c72c2a9b104afe444d7fa96aa30b}\index{camera@{camera}!m\_speedMove@{m\_speedMove}}
+\index{m\_speedMove@{m\_speedMove}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_speedMove}{m\_speedMove}}
+{\footnotesize\ttfamily \label{classcamera_a7772c72c2a9b104afe444d7fa96aa30b} 
+float camera\+::m\+\_\+speed\+Move\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Speed of camera movement. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a0eb2a385a0b4a41dae1249bf7507bb84}\index{camera@{camera}!m\_vecDistances@{m\_vecDistances}}
+\index{m\_vecDistances@{m\_vecDistances}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_vecDistances}{m\_vecDistances}}
+{\footnotesize\ttfamily \label{classcamera_a0eb2a385a0b4a41dae1249bf7507bb84} 
+std\+::vector$<$float$>$ camera\+::m\+\_\+vec\+Distances\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Distances from the camera to obstacles. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a4fc22d5692dec58b1afe6623273ef15e}\index{camera@{camera}!m\_vecRays@{m\_vecRays}}
+\index{m\_vecRays@{m\_vecRays}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{m\_vecRays}{m\_vecRays}}
+{\footnotesize\ttfamily \label{classcamera_a4fc22d5692dec58b1afe6623273ef15e} 
+std\+::vector$<$sf\+::\+Vertex\+Array$>$ camera\+::m\+\_\+vec\+Rays\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Rays cast from the camera. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classcamera_a8f8f8ab3c361b210b7e89e1400df5b72}\index{camera@{camera}!sinTable@{sinTable}}
+\index{sinTable@{sinTable}!camera@{camera}}
+\doxysubsubsection{\texorpdfstring{sinTable}{sinTable}}
+{\footnotesize\ttfamily \label{classcamera_a8f8f8ab3c361b210b7e89e1400df5b72} 
+std\+::vector$<$float$>$ camera\+::sin\+Table\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Precomputed sine values for ray angles. 
+
+
+
+Definition at line \mbox{\hyperlink{_camera_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{_camera_8hpp_source}{Camera.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Camera.\+hpp\item 
+src/\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}
