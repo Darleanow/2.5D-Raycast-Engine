@@ -3,10 +3,10 @@ name: CI and Deploy Documentation
 on:
   push:
     branches:
-      - master
+      - master  # Trigger on push to master branch
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +22,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install sphinx sphinx-rtd-theme breathe
-        
+
     - name: Set up Doxygen
       run: |
         sudo apt-get install -y doxygen graphviz
@@ -38,3 +38,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build/html
+        keep_files: false 

@@ -12,3 +12,9 @@ out
 
 # Ignore Doxygen files if not needed in the repo
 Doxyfile
+
+# Ignore build artifacts
+/build/
+/docs/html/
+/docs/xml/
+/site/
