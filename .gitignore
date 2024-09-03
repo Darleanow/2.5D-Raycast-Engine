@@ -2,8 +2,6 @@
 out
 
 # Ignore build output
-/build/
-/docs/xml/
 /docs/html/
 /docs/latex/
 

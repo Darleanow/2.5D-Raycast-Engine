@@ -1,0 +1,552 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classcamera" kind="class" language="C++" prot="public">
+    <compoundname>camera</compoundname>
+    <includes refid="_camera_8hpp" local="no">Camera.hpp</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classcamera_1ab08734ecdc965f68e37978c9abd4fa6b" prot="protected" static="no" mutable="no">
+        <type><ref refid="classmap" kindref="compound">map</ref> &amp;</type>
+        <definition>map&amp; camera::m_map</definition>
+        <argsstring></argsstring>
+        <name>m_map</name>
+        <qualifiedname>camera::m_map</qualifiedname>
+        <briefdescription>
+<para>Reference to the map object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="19" column="7" bodyfile="src/Camera.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a8ce590b00f15978be2ca8962b44906a5" prot="protected" static="no" mutable="no">
+        <type>sf::RenderWindow &amp;</type>
+        <definition>sf::RenderWindow&amp; camera::m_renderWindow</definition>
+        <argsstring></argsstring>
+        <name>m_renderWindow</name>
+        <qualifiedname>camera::m_renderWindow</qualifiedname>
+        <briefdescription>
+<para>Reference to the SFML render window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="20" column="20" bodyfile="src/Camera.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a1b7c318e23591214448c37582007b720" prot="protected" static="no" mutable="no">
+        <type>sf::CircleShape</type>
+        <definition>sf::CircleShape camera::m_camera</definition>
+        <argsstring></argsstring>
+        <name>m_camera</name>
+        <qualifiedname>camera::m_camera</qualifiedname>
+        <briefdescription>
+<para>Representation of the camera as a circle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="21" column="19" bodyfile="src/Camera.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a947d9a37d16b0c95ac2db69e504a7b3c" prot="protected" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f camera::m_position</definition>
+        <argsstring></argsstring>
+        <name>m_position</name>
+        <qualifiedname>camera::m_position</qualifiedname>
+        <briefdescription>
+<para>Camera&apos;s current position in the world. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="22" column="16" bodyfile="src/Camera.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a9b47581c719b16a39b486bf59ea89238" prot="protected" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f camera::m_intersection</definition>
+        <argsstring></argsstring>
+        <name>m_intersection</name>
+        <qualifiedname>camera::m_intersection</qualifiedname>
+        <briefdescription>
+<para>Intersection point of the ray with an obstacle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="24" column="7" bodyfile="src/Camera.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a0eb2a385a0b4a41dae1249bf7507bb84" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; camera::m_vecDistances</definition>
+        <argsstring></argsstring>
+        <name>m_vecDistances</name>
+        <qualifiedname>camera::m_vecDistances</qualifiedname>
+        <briefdescription>
+<para>Distances from the camera to obstacles. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="26" column="7" bodyfile="src/Camera.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1afd6537789e1d286a9a2306c9ecd07fdd" prot="protected" static="no" mutable="no">
+        <type>sf::Clock</type>
+        <definition>sf::Clock camera::m_clock</definition>
+        <argsstring></argsstring>
+        <name>m_clock</name>
+        <qualifiedname>camera::m_clock</qualifiedname>
+        <briefdescription>
+<para>Clock to manage time-based events. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="27" column="13" bodyfile="src/Camera.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a8a34963e75da04104e8f1932c6956301" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::m_angle</definition>
+        <argsstring></argsstring>
+        <name>m_angle</name>
+        <qualifiedname>camera::m_angle</qualifiedname>
+        <briefdescription>
+<para>Camera&apos;s current rotation angle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="29" column="9" bodyfile="src/Camera.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a49eff598e2a5120291be6f2517557b7f" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::m_fov</definition>
+        <argsstring></argsstring>
+        <name>m_fov</name>
+        <qualifiedname>camera::m_fov</qualifiedname>
+        <briefdescription>
+<para>Camera&apos;s field of view. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="30" column="9" bodyfile="src/Camera.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a91d570ba05593c129d7a249a84c05610" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::m_rayLength</definition>
+        <argsstring></argsstring>
+        <name>m_rayLength</name>
+        <qualifiedname>camera::m_rayLength</qualifiedname>
+        <briefdescription>
+<para>Maximum length of the rays cast by the camera. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="31" column="9" bodyfile="src/Camera.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a88bbde1475bca637d3ab168be2e4937c" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::m_radius</definition>
+        <argsstring></argsstring>
+        <name>m_radius</name>
+        <qualifiedname>camera::m_radius</qualifiedname>
+        <briefdescription>
+<para>Radius of the camera&apos;s circular representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="32" column="9" bodyfile="src/Camera.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a7772c72c2a9b104afe444d7fa96aa30b" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::m_speedMove</definition>
+        <argsstring></argsstring>
+        <name>m_speedMove</name>
+        <qualifiedname>camera::m_speedMove</qualifiedname>
+        <briefdescription>
+<para>Speed of camera movement. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="33" column="9" bodyfile="src/Camera.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1aef1698bab1fa18359f60c5eeff76618a" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::m_speedAngle</definition>
+        <argsstring></argsstring>
+        <name>m_speedAngle</name>
+        <qualifiedname>camera::m_speedAngle</qualifiedname>
+        <briefdescription>
+<para>Speed of camera rotation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="34" column="9" bodyfile="src/Camera.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1ad20d11e2cb7cb8d3687556405bd1bf46" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int camera::m_pitch</definition>
+        <argsstring></argsstring>
+        <name>m_pitch</name>
+        <qualifiedname>camera::m_pitch</qualifiedname>
+        <briefdescription>
+<para>Camera&apos;s pitch (Y-axis rotation). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="35" column="7" bodyfile="src/Camera.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a4fc22d5692dec58b1afe6623273ef15e" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; sf::VertexArray &gt;</type>
+        <definition>std::vector&lt;sf::VertexArray&gt; camera::m_vecRays</definition>
+        <argsstring></argsstring>
+        <name>m_vecRays</name>
+        <qualifiedname>camera::m_vecRays</qualifiedname>
+        <briefdescription>
+<para>Rays cast from the camera. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="37" column="15" bodyfile="src/Camera.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a8f8f8ab3c361b210b7e89e1400df5b72" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; camera::sinTable</definition>
+        <argsstring></argsstring>
+        <name>sinTable</name>
+        <qualifiedname>camera::sinTable</qualifiedname>
+        <briefdescription>
+<para>Precomputed sine values for ray angles. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="39" column="15" bodyfile="src/Camera.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1ab549fe43185366dd9c392de8c55751e0" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; camera::cosTable</definition>
+        <argsstring></argsstring>
+        <name>cosTable</name>
+        <qualifiedname>camera::cosTable</qualifiedname>
+        <briefdescription>
+<para>Precomputed cosine values for ray angles. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="40" column="15" bodyfile="src/Camera.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcamera_1a3d8bc3e83cdc778ca84d125fe78df2e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>camera::camera</definition>
+        <argsstring>(sf::RenderWindow &amp;renderWindow, map &amp;Map)</argsstring>
+        <name>camera</name>
+        <qualifiedname>camera::camera</qualifiedname>
+        <param>
+          <type>sf::RenderWindow &amp;</type>
+          <declname>renderWindow</declname>
+        </param>
+        <param>
+          <type><ref refid="classmap" kindref="compound">map</ref> &amp;</type>
+          <declname>Map</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a camera object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>renderWindow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the SFML window where the scene is rendered. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the map object used by the camera. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="50" column="3" bodyfile="src/Camera.cpp" bodystart="18" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classcamera_1a3ed796488a936f45bbcd5da7e532988a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void camera::draw3D</definition>
+        <argsstring>()</argsstring>
+        <name>draw3D</name>
+        <qualifiedname>camera::draw3D</qualifiedname>
+        <briefdescription>
+<para>Renders the 3D view of the scene based on the camera&apos;s perspective. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="55" column="8" bodyfile="src/Camera.cpp" bodystart="57" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classcamera_1ad7331b32ddf5cc06ca0a6c710c6202b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void camera::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <qualifiedname>camera::update</qualifiedname>
+        <briefdescription>
+<para>Updates the camera&apos;s position and orientation based on user input. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="60" column="8" bodyfile="src/Camera.cpp" bodystart="102" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classcamera_1a52d8e786660c6892b15aaf2e27b9ea32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void camera::projection</definition>
+        <argsstring>()</argsstring>
+        <name>projection</name>
+        <qualifiedname>camera::projection</qualifiedname>
+        <briefdescription>
+<para>Casts rays from the camera&apos;s position to determine distances to obstacles. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="66" column="8" bodyfile="src/Camera.cpp" bodystart="112" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classcamera_1adfc67bdf0e557f49ad780b485cdf7fbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void camera::checkKeyboardHit</definition>
+        <argsstring>(sf::Time dt)</argsstring>
+        <name>checkKeyboardHit</name>
+        <qualifiedname>camera::checkKeyboardHit</qualifiedname>
+        <param>
+          <type>sf::Time</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Handles keyboard input to control the camera&apos;s movement and rotation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delta time to ensure consistent movement speed regardless of frame rate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="75" column="8" bodyfile="src/Camera.cpp" bodystart="168" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="classcamera_1a041e24d91fac167068dc08632d568d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool camera::intersect</definition>
+        <argsstring>(unsigned int it)</argsstring>
+        <name>intersect</name>
+        <qualifiedname>camera::intersect</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>it</declname>
+        </param>
+        <briefdescription>
+<para>Determines whether a ray intersects with an obstacle in the map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>it</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the ray. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the ray intersects with an obstacle, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="83" column="8" bodyfile="src/Camera.cpp" bodystart="209" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classcamera_1a917423b8aea58c352444880da61ae98c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float camera::toRadian</definition>
+        <argsstring>(float deg)</argsstring>
+        <name>toRadian</name>
+        <qualifiedname>camera::toRadian</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>deg</declname>
+        </param>
+        <briefdescription>
+<para>Converts degrees to radians. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Degrees to be converted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Converted value in radians. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="91" column="16" bodyfile="src/Camera.cpp" bodystart="234" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classcamera_1a67459e8e14b87a38e09be38a1c2a81cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float camera::dCos</definition>
+        <argsstring>(float deg)</argsstring>
+        <name>dCos</name>
+        <qualifiedname>camera::dCos</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>deg</declname>
+        </param>
+        <briefdescription>
+<para>Computes the cosine of an angle in degrees. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angle in degrees. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Cosine of the angle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="99" column="16" bodyfile="src/Camera.cpp" bodystart="242" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="classcamera_1a16579906fa90ac60ee13cb547e300f44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float camera::dSin</definition>
+        <argsstring>(float deg)</argsstring>
+        <name>dSin</name>
+        <qualifiedname>camera::dSin</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>deg</declname>
+        </param>
+        <briefdescription>
+<para>Computes the sine of an angle in degrees. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angle in degrees. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Sine of the angle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Camera.hpp" line="107" column="16" bodyfile="src/Camera.cpp" bodystart="250" bodyend="250"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents the camera in a 2.5D raycasting engine. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>camera</label>
+        <link refid="classcamera"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_map</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>map</label>
+        <link refid="classmap"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/Camera.hpp" line="17" column="1" bodyfile="src/Camera.hpp" bodystart="17" bodyend="109"/>
+    <listofallmembers>
+      <member refid="classcamera_1a3d8bc3e83cdc778ca84d125fe78df2e0" prot="public" virt="non-virtual"><scope>camera</scope><name>camera</name></member>
+      <member refid="classcamera_1adfc67bdf0e557f49ad780b485cdf7fbd" prot="public" virt="non-virtual"><scope>camera</scope><name>checkKeyboardHit</name></member>
+      <member refid="classcamera_1ab549fe43185366dd9c392de8c55751e0" prot="protected" virt="non-virtual"><scope>camera</scope><name>cosTable</name></member>
+      <member refid="classcamera_1a67459e8e14b87a38e09be38a1c2a81cb" prot="public" virt="non-virtual"><scope>camera</scope><name>dCos</name></member>
+      <member refid="classcamera_1a3ed796488a936f45bbcd5da7e532988a" prot="public" virt="non-virtual"><scope>camera</scope><name>draw3D</name></member>
+      <member refid="classcamera_1a16579906fa90ac60ee13cb547e300f44" prot="public" virt="non-virtual"><scope>camera</scope><name>dSin</name></member>
+      <member refid="classcamera_1a041e24d91fac167068dc08632d568d1d" prot="public" virt="non-virtual"><scope>camera</scope><name>intersect</name></member>
+      <member refid="classcamera_1a8a34963e75da04104e8f1932c6956301" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_angle</name></member>
+      <member refid="classcamera_1a1b7c318e23591214448c37582007b720" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_camera</name></member>
+      <member refid="classcamera_1afd6537789e1d286a9a2306c9ecd07fdd" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_clock</name></member>
+      <member refid="classcamera_1a49eff598e2a5120291be6f2517557b7f" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_fov</name></member>
+      <member refid="classcamera_1a9b47581c719b16a39b486bf59ea89238" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_intersection</name></member>
+      <member refid="classcamera_1ab08734ecdc965f68e37978c9abd4fa6b" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_map</name></member>
+      <member refid="classcamera_1ad20d11e2cb7cb8d3687556405bd1bf46" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_pitch</name></member>
+      <member refid="classcamera_1a947d9a37d16b0c95ac2db69e504a7b3c" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_position</name></member>
+      <member refid="classcamera_1a88bbde1475bca637d3ab168be2e4937c" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_radius</name></member>
+      <member refid="classcamera_1a91d570ba05593c129d7a249a84c05610" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_rayLength</name></member>
+      <member refid="classcamera_1a8ce590b00f15978be2ca8962b44906a5" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_renderWindow</name></member>
+      <member refid="classcamera_1aef1698bab1fa18359f60c5eeff76618a" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_speedAngle</name></member>
+      <member refid="classcamera_1a7772c72c2a9b104afe444d7fa96aa30b" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_speedMove</name></member>
+      <member refid="classcamera_1a0eb2a385a0b4a41dae1249bf7507bb84" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_vecDistances</name></member>
+      <member refid="classcamera_1a4fc22d5692dec58b1afe6623273ef15e" prot="protected" virt="non-virtual"><scope>camera</scope><name>m_vecRays</name></member>
+      <member refid="classcamera_1a52d8e786660c6892b15aaf2e27b9ea32" prot="public" virt="non-virtual"><scope>camera</scope><name>projection</name></member>
+      <member refid="classcamera_1a8f8f8ab3c361b210b7e89e1400df5b72" prot="protected" virt="non-virtual"><scope>camera</scope><name>sinTable</name></member>
+      <member refid="classcamera_1a917423b8aea58c352444880da61ae98c" prot="public" virt="non-virtual"><scope>camera</scope><name>toRadian</name></member>
+      <member refid="classcamera_1ad7331b32ddf5cc06ca0a6c710c6202b8" prot="public" virt="non-virtual"><scope>camera</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

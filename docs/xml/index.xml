@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.12.0" xml:lang="en-US">
+  <compound refid="classcamera" kind="class"><name>camera</name>
+    <member refid="classcamera_1ab08734ecdc965f68e37978c9abd4fa6b" kind="variable"><name>m_map</name></member>
+    <member refid="classcamera_1a8ce590b00f15978be2ca8962b44906a5" kind="variable"><name>m_renderWindow</name></member>
+    <member refid="classcamera_1a1b7c318e23591214448c37582007b720" kind="variable"><name>m_camera</name></member>
+    <member refid="classcamera_1a947d9a37d16b0c95ac2db69e504a7b3c" kind="variable"><name>m_position</name></member>
+    <member refid="classcamera_1a9b47581c719b16a39b486bf59ea89238" kind="variable"><name>m_intersection</name></member>
+    <member refid="classcamera_1a0eb2a385a0b4a41dae1249bf7507bb84" kind="variable"><name>m_vecDistances</name></member>
+    <member refid="classcamera_1afd6537789e1d286a9a2306c9ecd07fdd" kind="variable"><name>m_clock</name></member>
+    <member refid="classcamera_1a8a34963e75da04104e8f1932c6956301" kind="variable"><name>m_angle</name></member>
+    <member refid="classcamera_1a49eff598e2a5120291be6f2517557b7f" kind="variable"><name>m_fov</name></member>
+    <member refid="classcamera_1a91d570ba05593c129d7a249a84c05610" kind="variable"><name>m_rayLength</name></member>
+    <member refid="classcamera_1a88bbde1475bca637d3ab168be2e4937c" kind="variable"><name>m_radius</name></member>
+    <member refid="classcamera_1a7772c72c2a9b104afe444d7fa96aa30b" kind="variable"><name>m_speedMove</name></member>
+    <member refid="classcamera_1aef1698bab1fa18359f60c5eeff76618a" kind="variable"><name>m_speedAngle</name></member>
+    <member refid="classcamera_1ad20d11e2cb7cb8d3687556405bd1bf46" kind="variable"><name>m_pitch</name></member>
+    <member refid="classcamera_1a4fc22d5692dec58b1afe6623273ef15e" kind="variable"><name>m_vecRays</name></member>
+    <member refid="classcamera_1a8f8f8ab3c361b210b7e89e1400df5b72" kind="variable"><name>sinTable</name></member>
+    <member refid="classcamera_1ab549fe43185366dd9c392de8c55751e0" kind="variable"><name>cosTable</name></member>
+    <member refid="classcamera_1a3d8bc3e83cdc778ca84d125fe78df2e0" kind="function"><name>camera</name></member>
+    <member refid="classcamera_1a3ed796488a936f45bbcd5da7e532988a" kind="function"><name>draw3D</name></member>
+    <member refid="classcamera_1ad7331b32ddf5cc06ca0a6c710c6202b8" kind="function"><name>update</name></member>
+    <member refid="classcamera_1a52d8e786660c6892b15aaf2e27b9ea32" kind="function"><name>projection</name></member>
+    <member refid="classcamera_1adfc67bdf0e557f49ad780b485cdf7fbd" kind="function"><name>checkKeyboardHit</name></member>
+    <member refid="classcamera_1a041e24d91fac167068dc08632d568d1d" kind="function"><name>intersect</name></member>
+    <member refid="classcamera_1a917423b8aea58c352444880da61ae98c" kind="function"><name>toRadian</name></member>
+    <member refid="classcamera_1a67459e8e14b87a38e09be38a1c2a81cb" kind="function"><name>dCos</name></member>
+    <member refid="classcamera_1a16579906fa90ac60ee13cb547e300f44" kind="function"><name>dSin</name></member>
+  </compound>
+  <compound refid="classmap" kind="class"><name>map</name>
+    <member refid="classmap_1af6ddd769f5d06f46b32cdbb40783b783" kind="variable"><name>m_renderWindow</name></member>
+    <member refid="classmap_1a474e50ad49a4b19d0d5bec2fbdc14b93" kind="variable"><name>m_vecMap</name></member>
+    <member refid="classmap_1a34b43c4ecce8de3a5228b7f4e6d66740" kind="variable"><name>width</name></member>
+    <member refid="classmap_1a9958bc4a129d86b6e0b1b61a6ae16c41" kind="variable"><name>height</name></member>
+    <member refid="classmap_1aa0562fd4f241b9a146153dcca585e243" kind="function"><name>addObstacles</name></member>
+    <member refid="classmap_1a64a067e38ec78bc294ceae4d74951870" kind="function"><name>map</name></member>
+    <member refid="classmap_1ad78e8aa79ddc5faa496c37600151bd17" kind="function"><name>checkMapCase</name></member>
+    <member refid="classmap_1ace7bafa28bae3295dab9e917bcc92665" kind="function"><name>getWidth</name></member>
+    <member refid="classmap_1a20b217778b82c7c2d70c852bd41e9b43" kind="function"><name>getHeight</name></member>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_camera_8cpp" kind="file"><name>Camera.cpp</name>
+  </compound>
+  <compound refid="_camera_8hpp" kind="file"><name>Camera.hpp</name>
+    <member refid="_camera_8hpp_1a525335710b53cb064ca56b936120431e" kind="define"><name>_USE_MATH_DEFINES</name></member>
+  </compound>
+  <compound refid="constants_8hpp" kind="file"><name>constants.hpp</name>
+    <member refid="constants_8hpp_1ac6497490fb897d6507e1cb881627f13a" kind="variable"><name>xCase</name></member>
+    <member refid="constants_8hpp_1a818bb8bb39ea2269713f5183e8adcd14" kind="variable"><name>yCase</name></member>
+    <member refid="constants_8hpp_1a4fe2ef0ebfb3819fd37f618342f14b3a" kind="variable"><name>blocSize</name></member>
+    <member refid="constants_8hpp_1a823f19cec848a92afa7a8d00d447991a" kind="variable"><name>SCREENWIDTH</name></member>
+    <member refid="constants_8hpp_1aec0d14ea87e0eb3373b08fe2938972ff" kind="variable"><name>SCREENHEIGHT</name></member>
+  </compound>
+  <compound refid="_map_8cpp" kind="file"><name>Map.cpp</name>
+  </compound>
+  <compound refid="_map_8hpp" kind="file"><name>Map.hpp</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>
