@@ -1,17 +1,37 @@
+/**
+ * @file main.cpp
+ * @brief Entry point for the 2.5D raycasting engine.
+ *
+ * This file contains the main function, which initializes the SFML window,
+ * creates the map and camera objects, and runs the main loop of the
+ * application.
+ */
+
 #include <SFML/Graphics.hpp>
 
 #include "src/Camera.hpp"
 #include "src/Map.hpp"
 
+/**
+ * @brief The main function for the 2.5D raycasting engine.
+ *
+ * Initializes the game window, sets up the map and camera, and enters the main
+ * loop where events are handled, and the scene is updated and rendered.
+ *
+ * @return int Returns 0 upon successful execution.
+ */
 int main() {
+  // Create the SFML render window
   sf::RenderWindow window(sf::VideoMode(SCREENWIDTH, SCREENHEIGHT), "RayCast");
   window.setFramerateLimit(144);
   window.setVerticalSyncEnabled(true);
 
+  // Create a map with a randomly generated maze
   map _map(window);
   camera camera_(window, _map);
   window.setMouseCursorVisible(false);
 
+  // Main loop
   while (window.isOpen()) {
     sf::Event event;
     while (window.pollEvent(event)) {
